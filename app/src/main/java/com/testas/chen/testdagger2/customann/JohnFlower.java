@@ -9,6 +9,7 @@ import javax.inject.Qualifier;
  * Created by chen on 2017/5/26.
  */
 
+
 @Qualifier
 @Retention(RetentionPolicy.RUNTIME)
 public @interface JohnFlower {}
