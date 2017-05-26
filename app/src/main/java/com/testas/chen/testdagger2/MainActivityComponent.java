@@ -7,7 +7,7 @@ import dagger.Component;
  */
 
 
-@Component
+@Component(modules = FlowerMoudle.class)
 public interface MainActivityComponent {
     void inject(MainActivity activity);
 }
