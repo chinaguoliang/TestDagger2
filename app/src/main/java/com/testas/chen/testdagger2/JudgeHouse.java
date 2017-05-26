@@ -1,5 +1,7 @@
 package com.testas.chen.testdagger2;
 
+import com.testas.chen.testdagger2.customann.JohnFlower;
+
 import javax.inject.Inject;
 import javax.inject.Named;
 
@@ -12,7 +14,7 @@ public class JudgeHouse {
     private Flower flower;
 
     @Inject
-    public JudgeHouse(@Named("Tom") Flower flower) {
+    public JudgeHouse(@JohnFlower Flower flower) {
         this.flower = flower;
     }
 
