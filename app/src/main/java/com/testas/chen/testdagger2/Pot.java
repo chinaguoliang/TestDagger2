@@ -7,6 +7,7 @@ import javax.inject.Inject;
  */
 
 public class Pot {
+    public int temp ;
 
     private Flower flower;
 

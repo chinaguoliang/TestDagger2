@@ -1,5 +1,6 @@
 package com.testas.chen.testdagger2;
 
+import com.testas.chen.testdagger2.customann.PerActivity;
 import com.testas.chen.testdagger2.customann.PotModule;
 
 import dagger.Component;
