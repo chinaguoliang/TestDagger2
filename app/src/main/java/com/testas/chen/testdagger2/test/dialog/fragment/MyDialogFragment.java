@@ -1,6 +1,7 @@
 package com.testas.chen.testdagger2.test.dialog.fragment;
 
 import android.app.Dialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -11,6 +12,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.view.WindowManager;
+import android.widget.LinearLayout;
 
 import com.testas.chen.testdagger2.R;
 
@@ -62,8 +65,21 @@ public class MyDialogFragment extends DialogFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.dialog_layout,container);
+        LinearLayout ll = (LinearLayout)v.findViewById(R.id.dialog_layout_ll);
+        ViewGroup.LayoutParams params = ll.getLayoutParams();
+        int height = getScreenHeight();
+        params.height = (height * 1) / 3;
+        ll.setLayoutParams(params);
         initDialogParams();
         return v;
+    }
+
+    private int getScreenHeight() {
+        WindowManager wm = this.getActivity().getWindowManager();
+
+        int width = wm.getDefaultDisplay().getWidth();
+        int height = wm.getDefaultDisplay().getHeight();
+        return height;
     }
 
     @Override
